@@ -8,6 +8,7 @@ import (
 	"goutils/pkg/cloud/entity/obs"
 	"goutils/pkg/cloud/entity/request"
 	huaweiSign "goutils/pkg/cloud/sdk_sign/huawei"
+	"k8s.io/klog/v2"
 	"strconv"
 
 	huaweiObs "github.com/huaweicloud/huaweicloud-sdk-go-obs/obs"

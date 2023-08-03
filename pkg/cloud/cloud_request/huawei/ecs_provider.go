@@ -13,6 +13,7 @@ import (
 	"goutils/pkg/cloud/entity/evs"
 	huaweiSign "goutils/pkg/cloud/sdk_sign/huawei"
 	timeUtil "goutils/pkg/time"
+	"k8s.io/klog/v2"
 	"strings"
 
 	"github.com/lstack-org/utils/pkg/stream"

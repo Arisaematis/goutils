@@ -11,6 +11,7 @@ import (
 	"goutils/pkg/cloud/entity/sfs"
 	huaweiSign "goutils/pkg/cloud/sdk_sign/huawei"
 	timeUtil "goutils/pkg/time"
+	"k8s.io/klog/v2"
 	"math"
 	"strconv"
 

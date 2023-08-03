@@ -2,6 +2,7 @@ package drivers
 
 import (
 	"context"
+	"github.com/go-redis/redis/v8"
 	"goutils/pkg/setting"
 )
 

@@ -10,6 +10,7 @@ import (
 	"goutils/pkg/cloud/entity/region"
 	huaweiSign "goutils/pkg/cloud/sdk_sign/huawei"
 	"goutils/pkg/setting"
+	"k8s.io/klog/v2"
 
 	"github.com/tidwall/gjson"
 )
