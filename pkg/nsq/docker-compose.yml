@@ -1,0 +1,29 @@
+version: '3'
+services:
+  nsqlookupd:
+    image: nsqio/nsq
+    container_name: nsqlookupd
+    command: /nsqlookupd
+    ports:
+      - "41600:4160"
+      - "41610:4161"
+  nsqd:
+    image: nsqio/nsq
+    container_name: nsqd
+    # --broadcast-address 暴露的IP 如果不暴露IP consumer 连接nsqlookupd 会无法解析
+    command: /nsqd --lookupd-tcp-address=nsqlookupd:4160 --data-path=/data --broadcast-address=192.168.10.127
+    volumes:
+      - /Users/yeshibo/Desktop/docker/data/nsq:/data
+    depends_on:
+      - nsqlookupd
+    ports:
+      - "4150:4150"
+      - "4151:4151"
+  nsqadmin:
+    image: nsqio/nsq
+    container_name: nsqadmin
+    command: /nsqadmin --lookupd-http-address=nsqlookupd:4161
+    depends_on:
+      - nsqlookupd  
+    ports:
+      - "41710:4171"
